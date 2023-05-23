@@ -1,0 +1,115 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int secenek = 0;
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Hangi işlemi yapmak istersiniz?");
+            System.out.println("1- Toplama");
+            System.out.println("2- Çıkarma");
+            System.out.println("3- Çarpma");
+            System.out.println("4- Bölme");
+            System.out.println("5- Faktöriyel Alma");
+            System.out.println("6- Kare Alma");
+            System.out.println("0- Çıkış");
+
+            secenek = input.nextInt();
+
+            if (secenek == 0) {
+                System.out.println("Programdan çıkılıyor...");
+                break;
+            }
+
+            switch (secenek) {
+                case 1:
+                    toplamaIslemi();
+                    break;
+                case 2:
+                    cikarmaIslemi();
+                    break;
+                case 3:
+                    carpmaIslemi();
+                    break;
+                case 4:
+                    bolmeIslemi();
+                    break;
+                case 5:
+                    faktoriyelIslemi();
+                    break;
+                case 6:
+                    kareIslemi();
+                    break;
+                default:
+                    System.out.println("Geçersiz bir seçenek girdiniz.");
+            }
+        }
+    }
+
+    public static void toplamaIslemi() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayı 1'i giriniz:");
+        int sayi1 = input.nextInt();
+        System.out.println("Sayı 2'yi giriniz:");
+        int sayi2 = input.nextInt();
+        int toplam = sayi1 + sayi2;
+        System.out.println("Toplam: " + toplam);
+    }
+
+    public static void cikarmaIslemi() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayı 1'i giriniz:");
+        int sayi1 = input.nextInt();
+        System.out.println("Sayı 2'yi giriniz:");
+        int sayi2 = input.nextInt();
+        int fark = sayi1 - sayi2;
+        System.out.println("Fark: " + fark);
+    }
+
+    public static void carpmaIslemi() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayı 1'i giriniz:");
+        int sayi1 = input.nextInt();
+        System.out.println("Sayı 2'yi giriniz:");
+        int sayi2 = input.nextInt();
+        int carpim = sayi1 * sayi2;
+        System.out.println("Çarpım: " + carpim);
+    }
+
+    public static void bolmeIslemi() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayı 1'i giriniz:");
+        int sayi1 = input.nextInt();
+        System.out.println("Sayı 2'yi giriniz:");
+        int sayi2 = input.nextInt();
+
+        if (sayi2 != 0) {
+            double bolum = (double) sayi1 / sayi2;
+            System.out.println("Bölüm: " + bolum);
+        } else {
+            System.out.println("Hata: Sıfıra bölme hatası!");
+        }
+    }
+
+    public static void faktoriyelIslemi() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayıyı giriniz:");
+        int sayi = input.nextInt();
+        int faktoriyel = 1;
+
+        for (int i = 1; i <= sayi; i++) {
+            faktoriyel *= i;
+        }
+
+        System.out.println("Faktöriyel: " + faktoriyel);
+    }
+
+    public static void kareIslemi() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Sayıyı giriniz:");
+        int sayi = input.nextInt();
+        int kare = sayi * sayi;
+        System.out.println("Kare: " + kare);
+    }
+}
